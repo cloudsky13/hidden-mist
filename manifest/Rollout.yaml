@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: skyhype/print:BlueBeastoftheleaf
+        image: skyhype/print:GreenBeastoftheleaf
         ports:
         - containerPort: 8080
   strategy:
