@@ -38,6 +38,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: realtimeapp-active
+            name: realtimeapp-preview
             port:
               number: 80
