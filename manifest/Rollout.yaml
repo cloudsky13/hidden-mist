@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: skyhype/print:GreenBeastoftheleaf
+        image: skyhype/print:BlueBeastoftheleaf
         ports:
         - containerPort: 8080
   strategy:
     blueGreen:
-      activeService: realtimeapp-active
-      previewService: realtimeapp-preview
+      activeService: realtimeapp-preview
+      previewService: realtimeapp-active
       autoPromotionEnabled: false
      
