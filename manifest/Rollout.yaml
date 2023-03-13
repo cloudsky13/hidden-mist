@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
   strategy:
     blueGreen:
-      activeService: realtimeapp-preview
-      previewService: realtimeapp-active
+      activeService: realtimeapp-active
+      previewService: realtimeapp-preview
       autoPromotionEnabled: false
      
