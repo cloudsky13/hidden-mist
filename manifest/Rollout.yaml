@@ -1,24 +1,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: myapp
+  name: realtimeapp
+  labels:
+    app: realtime
 spec:
   selector:
     matchLabels:
-      app: myapp
+      app: realtime
   replicas: 3
   template:
     metadata:
       labels:
-        app: myapp
+        app: realtime
     spec:
       containers:
-      - name: myapp
+      - name: realtimeapp
         image: skyhype/print:GreenBeastoftheleaf
         ports:
         - containerPort: 8080
   strategy:
     blueGreen:
-      activeService: myapp-service-blue
-      previewService: myapp-service-green
+      activeService: realtimeapp-active
+      previewService: realtimeapp-preview
       autoPromotionEnabled: false
+     
