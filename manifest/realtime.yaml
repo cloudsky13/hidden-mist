@@ -41,3 +41,20 @@ spec:
             name: realtimeapp-active
             port:
               number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: realtimeapp-ingress-preview
+spec:
+  rules:
+  - host: real.baeke.info.preview
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: realtimeapp-preview
+            port:
+              number: 80
