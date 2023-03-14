@@ -73,10 +73,10 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: realtimeapp-ingress-canary
+  name: realtimeapp-ingress-stable
 spec:
   rules:
-  - host: real.baeke.info.canary
+  - host: real.baeke.info.stable
     http:
       paths:
       - path: /
