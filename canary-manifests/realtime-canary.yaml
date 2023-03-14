@@ -17,10 +17,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: gbaeke/fluxapp:1.0.2
-        env:
-        - name: REDISHOST
-          value: "redisapp:6379"
+        image: argoproj/rollouts-demo:blue
         resources:
           requests:
             cpu: 25m
