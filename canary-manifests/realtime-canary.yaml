@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:blue
+        image: argoproj/rollouts-demo:green
         resources:
           requests:
             cpu: 25m
