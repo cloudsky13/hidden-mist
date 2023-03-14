@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: realtime
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:blue
+        image: skyhype/print:GreenBeastoftheleaf
         ports:
         - containerPort: 8080
   strategy:
