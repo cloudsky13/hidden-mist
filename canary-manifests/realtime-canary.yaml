@@ -79,7 +79,7 @@ metadata:
   name: realtimeapp-ingress-canary
 spec:
   rules:
-  - host: real.baeke.info
+  - host: real.baeke.info.canary
     http:
       paths:
       - path: /
