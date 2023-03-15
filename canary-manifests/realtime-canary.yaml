@@ -86,20 +86,3 @@ spec:
             name: realtimeapp-stable
             port:
               number: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: realtimeapp-ingress-canary
-spec:
-  rules:
-  - host: demo.canary
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: realtimeapp-canary
-            port:
-              number: 80
