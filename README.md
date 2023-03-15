@@ -14,7 +14,7 @@ Command:  `argocd admin initial-password -n argocd`
 
 # Ingress setup on minikube
 
-To manage ingress controllers, Kubernetes provides `Nginx Ingress Controller`, other third party tools like Istio and Linkerd.can also be used for this. Nginx Ingress Controller's support is extended as addons in minikube as well .
+To manage ingress controllers, Kubernetes provides `Nginx Ingress Controller`, other third party tools like Istio and Linkerd can also be used for this. Nginx Ingress Controller's support is extended as addons in minikube as well .
 With a simple command all dependencies will be made available and ingress will be enabled.
 
 Command:  `minikube addons enable ingress`
