@@ -55,6 +55,25 @@ Test to ensure the version you installed is up-to-date:
 
 [Argo Rollout Installation](https://argoproj.github.io/argo-rollouts/installation/)
 
+Steps
+kubectl port-forward svc/argocd-server 8080:443 -n argocd
+minikube service realtimeapp-active -n realtime-rollout
+
+Check revision history
+
+kubectl-argo-rollouts get rollout realtimeapp -n realtime-rollout
+
+<img width="719" alt="image" src="https://user-images.githubusercontent.com/60884268/225228584-e68358f3-64ac-4317-8b31-472e58eac2b6.png">
+
+Argo Rollouts Dashboard
+
+kubectl argo rollouts dashboard -n realtime-rollout
+
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/60884268/225229391-cdcfff57-9588-4427-a900-69ae1322e09b.png">
+
+Promote new image to active service
+
+kubectl argo rollouts promote realtimeapp -n realtime-rollout
 
 
 
