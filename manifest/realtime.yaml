@@ -7,7 +7,8 @@ metadata:
     app: realtime
 spec:
   ports:
-  - port: 80
+  - name: http-active
+    port: 80
     targetPort: 8080
   selector:
     app: realtime
@@ -40,7 +41,7 @@ spec:
           service:
             name: realtimeapp-active
             port:
-              number: 80
+              name: http-active
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
