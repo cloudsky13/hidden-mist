@@ -79,6 +79,5 @@ spec:
             spec:
               containers:
               - name: curl
-                image: curlimages/curl:7.69.1
-                command: ['curl',  '{{args.service-name}}']
+                image: argoproj/rollouts-demo:red
               restartPolicy: Never
