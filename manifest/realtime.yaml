@@ -34,7 +34,7 @@ annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host:  blue.green.demo.com
+  - host:  blue.green.info
     http:
       paths:
       - path: /
