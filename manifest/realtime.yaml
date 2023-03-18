@@ -34,7 +34,7 @@ metadata:
   name: realtimeapp-ingress-active
 spec:
   rules:
-  - host: bluegreen.in
+  - host: blue.green.demo.com
     http:
       paths:
       - path: /path
