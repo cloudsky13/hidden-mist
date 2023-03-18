@@ -80,5 +80,5 @@ spec:
               containers:
               - name: bluegreen
                 image: 
-                args: ['cat', 'dog.txt']
+                command: ['curl',  '{{args.service-name}}']
               restartPolicy: Never
