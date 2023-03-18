@@ -41,7 +41,7 @@ spec:
           service:
             name: realtimeapp-active
             port:
-              name: http-active
+              number: 39667
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
