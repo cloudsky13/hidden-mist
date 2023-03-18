@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:green
+        image: argoproj/rollouts-demo:red
         ports:
         - containerPort: 8080
   strategy:
