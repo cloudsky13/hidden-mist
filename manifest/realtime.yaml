@@ -32,10 +32,10 @@ metadata:
   name: realtimeapp-ingress
 spec:
   rules:
-  - host: real.baeke.info
+  - host: bluegreen.in
     http:
       paths:
-      - path: /
+      - path: /path
         pathType: Prefix
         backend:
           service:
