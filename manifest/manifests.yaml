@@ -79,6 +79,6 @@ spec:
             spec:
               containers:
               - name: bluegreen
-                image: argoproj/rollouts-demo:blue
+                image: argoproj/rollouts-demo:green
                 command: ['curl',  '{{args.service-name}}']
               restartPolicy: Never
