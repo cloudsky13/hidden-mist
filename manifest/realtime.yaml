@@ -30,9 +30,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: realtimeapp-ingress
+annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: real.baeke.info
+  - host:  blue.green.demo.com
     http:
       paths:
       - path: /
