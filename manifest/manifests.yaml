@@ -78,7 +78,7 @@ spec:
           template:
             spec:
               containers:
-              - name: bluegreen
-                image: argoproj/rollouts-demo:red
-                command: ['ping',  '{{args.service-name}}']
+              - name: curl
+                image: curlimages/curl:7.69.1
+                command: ['curl',  '{{args.service-name}}']
               restartPolicy: Never
