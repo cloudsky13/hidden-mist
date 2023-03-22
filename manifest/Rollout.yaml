@@ -9,7 +9,6 @@ spec:
     matchLabels:
       app: realtime
   replicas: 3
-  ttlSecondsAfterFinished: 30
   template:
     metadata:
       labels:
