@@ -9,6 +9,7 @@ spec:
     matchLabels:
       app: realtime
   replicas: 3
+  ttlSecondsAfterFinished: 30
   template:
     metadata:
       labels:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:green
+        image: argoproj/rollouts-demo:blue
         ports:
         - containerPort: 8080
   strategy:
