@@ -28,7 +28,7 @@ spec:
       prePromotionAnalysis:
         templates:
         - templateName: realtime-analysis
-          ttlSecondsAfterFinished: 30
+        ttlSecondsAfterFinished: 30
         args:
         - name: service-name
           value: realtimeapp-preview.default.svc.cluster.local
