@@ -80,4 +80,5 @@ spec:
               containers:
               - name: busybox-analysis
                 image: busybox
+                command: ["sleep", "60"]
               restartPolicy: Never
