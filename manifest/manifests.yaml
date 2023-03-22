@@ -81,4 +81,3 @@ spec:
               - name: busybox-analysis
                 image: busybox
               restartPolicy: Never
-            ttlSecondsAfterFinished: 30
