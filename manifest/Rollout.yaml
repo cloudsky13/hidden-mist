@@ -24,7 +24,7 @@ spec:
       activeService: realtimeapp-active
       previewService: realtimeapp-preview
       previewReplicaCount: 2
-      scaleDownDelayRevisionLimit: 1
+      scaleDownDelayRevisionLimit: 0
       prePromotionAnalysis:
         templates:
         - templateName: realtime-analysis
