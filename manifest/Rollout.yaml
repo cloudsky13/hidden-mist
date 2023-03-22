@@ -23,6 +23,8 @@ spec:
     blueGreen:
       activeService: realtimeapp-active
       previewService: realtimeapp-preview
+      previewReplicaCount: 2
+      scaleDownDelayRevisionLimit: 1
       prePromotionAnalysis:
         templates:
         - templateName: realtime-analysis
