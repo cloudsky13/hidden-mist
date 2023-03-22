@@ -73,7 +73,6 @@ spec:
   - name: test-realtime
     provider:
       job:
-        backoffLimit: 1
         spec:
           template:
             spec:
