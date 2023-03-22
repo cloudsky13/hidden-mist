@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:red
+        image: argoproj/rollouts-demo:yellow
         ports:
         - containerPort: 8080
   strategy:
@@ -28,7 +28,6 @@ spec:
       prePromotionAnalysis:
         templates:
         - templateName: realtime-analysis
-        ttlSecondsAfterFinished: 30
         args:
         - name: service-name
           value: realtimeapp-preview.default.svc.cluster.local
