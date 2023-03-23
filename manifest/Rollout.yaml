@@ -16,15 +16,14 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: argoproj/rollouts-demo:yellow
+        image: argoproj/rollouts-demo:blue
         ports:
         - containerPort: 8080
   strategy:
     blueGreen:
       activeService: realtimeapp-active
       previewService: realtimeapp-preview
-      previewReplicaCount: 2
-      scaleDownDelayRevisionLimit: 0
+      previewReplicaCount: 1
       prePromotionAnalysis:
         templates:
         - templateName: realtime-analysis
