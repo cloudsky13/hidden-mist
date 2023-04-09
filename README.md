@@ -11,9 +11,11 @@ Commands:
 # login with "admin" user and below token (as in documentation):
 Command: 
 Select Version`VERSION=$(curl --silent "https://api.github.com/repos/argoproj/argo-cd/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')`
+
 Install CLI `curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
 rm argocd-linux-amd64`
+
 Check initial password `argocd admin initial-password -n argocd | head -n 1`
 (make sure to update new password in the User Info option.)
 
