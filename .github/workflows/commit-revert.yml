@@ -19,7 +19,6 @@ jobs:
         run: |          
           git config --global user.email "ad5371032@github.com"
           git config --global user.name "cloudsky13"
-          touch new.txt
           echo "new-line" >> ./new.txt
           git add .
           git commit -m "update-main-branch"
