@@ -17,7 +17,8 @@ jobs:
         run: |          
           git config --global user.email "ad5371032@github.com"
           git config --global user.name "cloudsky13"
-          echo "new-line" >> ./dir1/changefile.txt
+          touch new.txt
+          echo "new-line" >> ./new.txt
           git commit -am "update-main-branch"
           git push origin main
           echo "pushed to main"
