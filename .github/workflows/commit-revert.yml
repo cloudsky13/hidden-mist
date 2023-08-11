@@ -15,7 +15,7 @@ jobs:
             
       - name: update file in repo and commit
         run: |          
-          git config --global user.email "ad5371032@github.com"
+          git config --global user.email "ad5371032@gmail.com"
           git config --global user.name "cloudsky13"
           touch new.txt
           echo "new-line" >> ./new.txt
