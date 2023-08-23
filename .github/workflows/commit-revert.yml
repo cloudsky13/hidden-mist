@@ -23,7 +23,7 @@ jobs:
           cp ./.github/workflows/commit-revert.yml ./new.yml
           rm -rf ./.github/workflows/commit-revert.yml
           yq -i '.' ./new.yml
-          cat ./new.yml >> ./.github/workflows/commit-revert.yml 
+          cat ./new.yml >> ./.github/workflows/commit-revert-new.yml 
           git add .
           git commit -m "update-main-branch"
           git push origin main
