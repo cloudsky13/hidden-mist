@@ -18,8 +18,7 @@ jobs:
         run: |          
           git config --global user.email "ad5371032@gmail.com"
           git config --global user.name "cloudsky13"
-          touch new.txt
-          echo "new-line" >> ./new.txt
+          cat .github/workflows/commit-revert.yml >> .github/workflows/new.yml
           git add .
           git commit -m "update-main-branch"
           git push origin main
