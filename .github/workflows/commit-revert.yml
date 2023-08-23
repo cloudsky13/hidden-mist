@@ -3,8 +3,6 @@ name: commit and revert PR
 on:
   workflow_dispatch:
   
-env:
-    GH_TOKEN: ${{ secrets.GIT_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
