@@ -28,16 +28,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GIT_TOKEN }} 
           
-          previous_commit=$(git log -n 1 --format=format:"%H" | tail -n 1)
-          random_string=$(openssl rand -base64 6)
-          branch_name="update-cron-exp-$random_string"
-          git branch $branch_name
-          git checkout $branch_name
-          git revert $previous_commit
-          git push origin $branch_name
-          l=$(echo "${previous_commit:0:7}")
-          echo "------$l-----------"
-          title="Revert-cron-schedule-changes-for-$l"
-          gh pr create -B main -H $branch_name --title $title --body 'Created by Github action' 
+          # previous_commit=$(git log -n 1 --format=format:"%H" | tail -n 1)
+          # random_string=$(openssl rand -base64 6)
+          # branch_name="update-cron-exp-$random_string"
+          # git branch $branch_name
+          # git checkout $branch_name
+          # git revert $previous_commit
+          # git push origin $branch_name
+          # l=$(echo "${previous_commit:0:7}")
+          # echo "------$l-----------"
+          # title="Revert-cron-schedule-changes-for-$l"
+          # gh pr create -B main -H $branch_name --title $title --body 'Created by Github action' 
 
         
