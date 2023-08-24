@@ -40,7 +40,7 @@ jobs:
           echo "Username: ${{ github.actor }}" >> new-file.txt
           git add .
           git commit -m "update-main-branch"
-          git push
+          git push --set-upstream origin $branch_name
           # l=$(echo "${previous_commit:0:7}")
           # echo "------$l-----------"
           title="Revert-cron-schedule-changes-for-${{ github.actor }}"
