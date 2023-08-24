@@ -44,6 +44,6 @@ jobs:
           # l=$(echo "${previous_commit:0:7}")
           # echo "------$l-----------"
           title="Revert-cron-schedule-changes-for-${{ github.actor }}"
-          gh pr create -B main -H $branch_name --title $title --body 'Created by ${{ github.actor }}' 
+          gh pr create -B release/v1.0.0 -H $branch_name --title $title --body 'Created by ${{ github.actor }}' 
 
         
