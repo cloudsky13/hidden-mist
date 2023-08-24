@@ -1,15 +1,43 @@
 name: commit and revert PR
+
 on:
   workflow_dispatch:
+
 env:
   GH_TOKEN: ${{ secrets.GIT_TOKEN }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           token: ${{ env.GH_TOKEN }}
+            
       - name: update file in repo and commit
-        run: "git config --global user.email \"ad5371032@gmail.com\"\ngit config --global user.name \"cloudsky13\"\ncp ./.github/workflows/commit-revert.yml ./new.yml\nyq -i '.' ./new.yml\ncat ./new.yml >> ./.github/workflows/commit-revert-new.yml \ngit add .\ngit commit -m \"update-main-branch\"\ngit push origin main\necho \"pushed to main\"\n\nprevious_commit=$(git log -n 1 --format=format:\"%H\" | tail -n 1)\nrandom_string=$(openssl rand -base64 6)\nbranch_name=\"update-cron-exp-$random_string\"\ngit branch $branch_name\ngit checkout $branch_name\ngit revert $previous_commit\ngit push origin $branch_name\nl=$(echo \"${previous_commit:0:7}\")\necho \"------$l-----------\"\ntitle=\"Revert-cron-schedule-changes-for-$l\"\ngh pr create -B main -H $branch_name --title $title --body 'Created by Github action' \n"
+        run: |          
+          git config --global user.email "ad5371032@gmail.com"
+          git config --global user.name "cloudsky13"
+          cp ./.github/workflows/commit-revert.yml ./new.yml
+          rm -rf ./.github/workflows/commit-revert.yml 
+          cat ./new.yml >> ./.github/workflows/commit-revert.yml 
+          git add .
+          git commit -m "update-main-branch"
+          git push origin main
+          echo "pushed to main"
+          
+          previous_commit=$(git log -n 1 --format=format:"%H" | tail -n 1)
+          random_string=$(openssl rand -base64 6)
+          branch_name="update-cron-exp-$random_string"
+          git branch $branch_name
+          git checkout $branch_name
+          git revert $previous_commit
+          git push origin $branch_name
+          l=$(echo "${previous_commit:0:7}")
+          echo "------$l-----------"
+          title="Revert-cron-schedule-changes-for-$l"
+          gh pr create -B main -H $branch_name --title $title --body 'Created by Github action' 
+
+        
