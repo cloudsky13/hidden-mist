@@ -37,7 +37,7 @@ jobs:
           git fetch
           git checkout -b $branch_name release/v1.0.0
           # git revert $previous_commit
-          echo "Username: ${{ github.actor }} >> new-file.txt
+          echo "Username: ${{ github.actor }}" >> new-file.txt
           git add .
           git commit -m "update-main-branch"
           git push
