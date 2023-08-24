@@ -35,7 +35,7 @@ jobs:
           # git branch $branch_name
           # git checkout $branch_name
           
-          git checkout -b $branch_name cloudsky13-patch-1
+          git checkout -b $branch_name release/v1.0.0
           # git revert $previous_commit
           echo "Username: ${{ github.actor }} >> new-file.txt
           git add .
