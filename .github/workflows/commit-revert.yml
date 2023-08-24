@@ -30,8 +30,8 @@ jobs:
           # echo "pushed to main"
           
           # previous_commit=$(git log -n 1 --format=format:"%H" | tail -n 1)
-          # random_string=$(openssl rand -base64 6)
-          # branch_name="update-cron-exp-$random_string"
+          random_string=$(openssl rand -base64 6)
+          branch_name="update-cron-exp-$random_string"
           # git branch $branch_name
           # git checkout $branch_name
           
