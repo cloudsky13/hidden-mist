@@ -18,7 +18,6 @@ jobs:
         run: |          
           git config --global user.email "ad5371032@gmail.com"
           git config --global user.name "cloudsky13"
-          git config --global url.https://${{ secrets.GIT_TOKEN }}@github.com/.insteadOf https://github.com/
           cp ./.github/workflows/commit-revert.yml ./new.yml
           yq -i '.' ./new.yml
           cat ./new.yml >> ./.github/workflows/commit-revert-new.yml 
@@ -26,6 +25,8 @@ jobs:
           git commit -m "update-main-branch"
           git push origin main
           echo "pushed to main"
+        env:
+          GH_TOKEN: ${{ secrets.GIT_TOKEN }} 
           
           previous_commit=$(git log -n 1 --format=format:"%H" | tail -n 1)
           random_string=$(openssl rand -base64 6)
