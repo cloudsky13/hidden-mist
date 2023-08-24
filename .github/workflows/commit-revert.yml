@@ -35,7 +35,8 @@ jobs:
           # git branch $branch_name
           # git checkout $branch_name
           git fetch --all
-          git checkout -b $branch_name release/v1.0.1
+          
+          git checkout -b $branch_name release/v1.0.0
           # git revert $previous_commit
           echo "Username: ${{ github.actor }}" >> new-file.txt
           git add .
@@ -44,6 +45,6 @@ jobs:
           # l=$(echo "${previous_commit:0:7}")
           # echo "------$l-----------"
           title="Revert-cron-schedule-changes-for-${{ github.actor }}"
-          gh pr create -B release/v1.0.1 -H $branch_name --title $title --body 'Created by ${{ github.actor }}' 
+          gh pr create -B release/v1.0.0 -H $branch_name --title $title --body 'Created by ${{ github.actor }}' 
 
         
