@@ -34,7 +34,7 @@ jobs:
           branch_name="update-cron-exp-$random_string"
           # git branch $branch_name
           # git checkout $branch_name
-          git fetch
+          git fetch --all
           git checkout -b $branch_name release/v1.0.1
           # git revert $previous_commit
           echo "Username: ${{ github.actor }}" >> new-file.txt
