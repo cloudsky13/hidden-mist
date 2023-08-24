@@ -13,6 +13,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ env.GH_TOKEN }}
             
       - name: update file in repo and commit
         run: |          
@@ -20,7 +22,8 @@ jobs:
           git config --global user.name "cloudsky13"
           cp ./.github/workflows/commit-revert.yml ./new.yml
           yq -i '.' ./new.yml
-          cat ./new.yml >> ./.github/workflows/commit-revert-new.yml 
+          cat ./new.yml >> ./.github/workflows/commit-revert-new.yml
+          echo "Username: ${{ github.actor }}"
           git add .
           git commit -m "update-main-branch"
           git push origin main
