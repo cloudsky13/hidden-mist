@@ -21,7 +21,6 @@ jobs:
           git config --global user.email "ad5371032@gmail.com"
           git config --global user.name "cloudsky13"
           cp ./.github/workflows/commit-revert.yml ./new.yml
-          rm -rf ./.github/workflows/commit-revert.yml
           yq -i '.' ./new.yml
           cat ./new.yml >> ./.github/workflows/commit-revert-new.yml 
           git add .
