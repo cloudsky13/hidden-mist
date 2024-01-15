@@ -1,0 +1,39 @@
+name: Conditional Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        firstInput:
+          - A
+          - B
+
+    name: Build with firstInput = ${{ matrix.firstInput }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set dynamic inputs
+        run: |
+          if [ "${{ matrix.firstInput }}" == "A" ]; then
+            echo "Setting boolean input for option A"
+            echo "::set-output name=booleanInput::true"
+          elif [ "${{ matrix.firstInput }}" == "B" ]; then
+            echo "Setting choice input for option B"
+            echo "::set-output name=choiceInput::value1"
+          else
+            echo "Setting default values for inputs"
+            echo "::set-output name=booleanInput::false"
+            echo "::set-output name=choiceInput::defaultvalue"
+          fi
+
+      - name: Use dynamic inputs
+        run: |
+          echo "Boolean input: ${{ needs.build.outputs.booleanInput }}"
+          echo "Choice input: ${{ needs.build.outputs.choiceInput }}"
